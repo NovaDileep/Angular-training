@@ -1,0 +1,16 @@
+
+
+<form class="sign"  [formGroup]="loginform" (ngSubmit)="validateLogin()">
+    <h2>Login</h2>
+    <div class="form-group" >
+      
+      <input type="email" class="form-control" id="email"  placeholder="Enter Email" formControlName="email">
+    </div>
+    <div class="form-group">
+      
+      <input type="password" class="form-control" id="password" placeholder="Enter Password" formControlName="password" >
+    </div>
+    
+    <button type="submit" class="btn btn-primary" id="submit" [disabled]="!loginform.valid" >Submit</button>
+    <button type="reset" class="btn btn-secondary" id="reset" >Clear</button>
+  </form>

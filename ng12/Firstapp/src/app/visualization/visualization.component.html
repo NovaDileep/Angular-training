@@ -1,0 +1,29 @@
+<div class="flex">
+<div  id="piechart">
+    <h5>Covid-19 cases in India by February 2021 (in %)</h5>
+    <canvas baseChart
+            [datasets]="data"
+            
+         
+            [labels]="labels"
+            [type]="'pie'">
+    </canvas>
+</div>
+
+<div  id="linechart">
+    <h5>Average monthly rainfall in India (in mm)</h5>
+    <canvas baseChart 
+            [datasets]="raindata"
+            [labels]="rainlabels"
+            [type]="'line'">
+    </canvas>
+    <br>
+    <div class="change">
+    <input type="text" class="form-control" [(ngModel)]="jan" placeholder="Jan" (keyup)="changeValue(jan,feb,mar)">
+    <input type="text" class="form-control" [(ngModel)]="feb" placeholder="Feb" (keyup)="changeValue(jan,feb,mar)">
+    <input type="text" class="form-control" [(ngModel)]="mar" placeholder="Mar" (keyup)="changeValue(jan,feb,mar)">
+    
+    </div>
+</div>
+</div>
+
