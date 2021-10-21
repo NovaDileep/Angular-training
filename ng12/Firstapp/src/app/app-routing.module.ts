@@ -7,17 +7,22 @@ import { AuthGuard } from './auth.guard';
 import { VisualizationComponent } from './visualization/visualization.component';
 import { DetailsComponent } from './details/details.component';
 
-const routes: Routes = [{path:"",component:LoginComponent},
-                        {path:"login",component:LoginComponent},
-                        {path:"register",component:RegisterComponent},
-                        {path:"dashboard",canActivate:[AuthGuard],component:HomeComponent},
-                        {path:"logout", component:LoginComponent},
-                        {path:"visualization",canActivate:[AuthGuard],component:VisualizationComponent},
-                        {path:"details",canActivate:[AuthGuard],component:DetailsComponent}
-                      ];
+const routes: Routes = [
+  { path: '', component: LoginComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'dashboard', canActivate: [AuthGuard], component: HomeComponent },
+  { path: 'logout', component: LoginComponent },
+  {
+    path: 'visualization',
+    canActivate: [AuthGuard],
+    component: VisualizationComponent,
+  },
+  { path: 'details', canActivate: [AuthGuard], component: DetailsComponent },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

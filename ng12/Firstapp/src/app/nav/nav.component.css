@@ -1,14 +1,14 @@
-a:hover{
-    color:black !important;
-    background-color: white;
+a:hover {
+  color: black !important;
+  background-color: white;
 }
-a{
-    margin-right: 20px;
-    color: white;
+a {
+  margin-right: 20px;
+  color: white;
 }
 
-img{
-    height:40px;
-    width:40px;
-    border-radius: 50%;
+img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
 }

@@ -1,17 +1,22 @@
-
 <div id="search">
-<input type="text" class="form-control"  placeholder="Search" [(ngModel)]="filteredString">
+  <input
+    type="text"
+    class="form-control"
+    placeholder="Search"
+    [(ngModel)]="filteredString"
+  />
 </div>
-    <table id="canvas">
-        <tr>
-            <th>Id</th>
-            <th>Name</th>
-            <th>Email</th>
-        </tr>
-    <tr *ngFor="let user of users| filter:filteredString">
-        <td>{{user.id}}</td>
-        <td><a  routerLink="/details" (click)="changeid(user)">{{user.name}}</a></td>
-        <td>{{user.email}}</td>
-        
-    </tr>
+<table id="canvas">
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Email</th>
+  </tr>
+  <tr *ngFor="let user of users | filter: filteredString">
+    <td>{{ user.id }}</td>
+    <td>
+      <a routerLink="/details" (click)="changeid(user)">{{ user.name }}</a>
+    </td>
+    <td>{{ user.email }}</td>
+  </tr>
 </table>

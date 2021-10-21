@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule, Title } from '@angular/platform-browser';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { NgChartsModule } from 'ng2-charts';
@@ -24,7 +24,7 @@ import { DetailsComponent } from './details/details.component';
     NavComponent,
     FilterPipe,
     VisualizationComponent,
-    DetailsComponent
+    DetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,9 +32,9 @@ import { DetailsComponent } from './details/details.component';
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
-    NgChartsModule
+    NgChartsModule,
   ],
   providers: [Title],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

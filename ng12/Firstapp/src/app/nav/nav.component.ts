@@ -4,15 +4,13 @@ import { ServiceService } from '../service.service';
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
-  styleUrls: ['./nav.component.css']
+  styleUrls: ['./nav.component.css'],
 })
 export class NavComponent implements OnInit {
+  constructor(public service: ServiceService) {}
 
-  constructor(public service:ServiceService) { }
-
-  ngOnInit(): void {
+  ngOnInit(): void {}
+  logout() {
+    this.service.loggedIn = false;
   }
-logout(){
-  this.service.loggedIn=false;
-}
 }

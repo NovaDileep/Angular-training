@@ -1,15 +1,11 @@
 import { Injectable } from '@angular/core';
 
-
-
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ServiceService {
-  
+  constructor() {}
+  loggedIn = false;
 
-  constructor() { }
-  loggedIn=false;
-
-  id=2;
+  id = 2;
 }
