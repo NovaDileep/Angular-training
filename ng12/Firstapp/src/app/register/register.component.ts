@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ServiceService } from '../service.service';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Title } from '@angular/platform-browser';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-register',
@@ -12,9 +12,9 @@ import { Title } from '@angular/platform-browser';
 export class RegisterComponent implements OnInit {
   constructor(
     private router: Router,
-    private service: ServiceService,
     private fb: FormBuilder,
-    private title: Title
+    private title: Title,
+    private auth: AuthService
   ) {}
 
   ngOnInit(): void {
@@ -27,9 +27,8 @@ export class RegisterComponent implements OnInit {
   validateSignup() {
     if (this.signupform.invalid) {
       return;
-    } else {
-      this.service.loggedIn = true;
-      this.router.navigate(['dashboard']);
     }
+    this.auth.loggedIn = true;
+    this.router.navigate(['dashboard']);
   }
 }

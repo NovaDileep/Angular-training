@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { ServiceService } from '../service.service';
 import { Title } from '@angular/platform-browser';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-details',
@@ -13,14 +13,12 @@ export class DetailsComponent implements OnInit {
 
   constructor(
     private http: HttpClient,
-    public service: ServiceService,
-    private title: Title
+    private title: Title,
+    private auth: AuthService
   ) {}
 
   ngOnInit(): void {
     this.title.setTitle('Details');
-    this.http
-      .get('https://jsonplaceholder.typicode.com/users/' + this.service.id)
-      .subscribe((data) => (this.user = data));
+    this.auth.getUser().subscribe((data) => (this.user = data));
   }
 }

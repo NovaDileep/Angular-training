@@ -4,7 +4,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { NgChartsModule } from 'ng2-charts';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -14,6 +13,7 @@ import { NavComponent } from './nav/nav.component';
 import { FilterPipe } from './Pipes/filter.pipe';
 import { VisualizationComponent } from './visualization/visualization.component';
 import { DetailsComponent } from './details/details.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +25,7 @@ import { DetailsComponent } from './details/details.component';
     FilterPipe,
     VisualizationComponent,
     DetailsComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,

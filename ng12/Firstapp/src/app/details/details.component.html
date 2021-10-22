@@ -1,4 +1,4 @@
-<table id="user">
+<!-- <table id="user">
   <tr>
     <th>Id</th>
     <th>Name</th>
@@ -23,4 +23,20 @@
     <td>{{ user.website }}</td>
     <td>{{ user.company.name }}</td>
   </tr>
-</table>
+</table> -->
+<div class="details">
+  <h3>{{ user.name }}</h3>
+  <ul>
+    <li><b>Id: </b>{{ user.id }}</li>
+    <li><b>Username: </b>{{ user.username }}</li>
+    <li><b>Email: </b>{{ user.email }}</li>
+    <li>
+      <b>Address: </b> {{ user.address.street }},
+      {{ user.address.suite }},<br />{{ user.address.city }},
+      {{ user.address.zipcode }}
+    </li>
+    <li><b>Phone no: </b>{{ user.phone }}</li>
+    <li><b>Website: </b>{{ user.website }}</li>
+    <li><b>Company Name: </b>{{ user.company.name }}</li>
+  </ul>
+</div>

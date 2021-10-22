@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ServiceService } from '../service.service';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Title } from '@angular/platform-browser';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-login',
@@ -12,9 +12,9 @@ import { Title } from '@angular/platform-browser';
 export class LoginComponent implements OnInit {
   constructor(
     private router: Router,
-    public service: ServiceService,
     private fb: FormBuilder,
-    private title: Title
+    private title: Title,
+    private auth: AuthService
   ) {}
 
   ngOnInit(): void {
@@ -28,15 +28,8 @@ export class LoginComponent implements OnInit {
   validateLogin() {
     if (this.loginform.invalid) {
       return;
-    } else {
-      this.service.loggedIn = true;
-      console.log(this.service.loggedIn);
-      this.router.navigate(['dashboard']);
     }
+    this.auth.loggedIn = true;
+    this.router.navigate(['dashboard']);
   }
-  /*
-reset(){
-  this.loginform.reset();
-}
-*/
 }

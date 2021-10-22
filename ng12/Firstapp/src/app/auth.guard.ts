@@ -6,19 +6,19 @@ import {
   UrlTree,
 } from '@angular/router';
 import { Observable } from 'rxjs';
-import { ServiceService } from './service.service';
 import { Router } from '@angular/router';
+import { AuthService } from './auth.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthGuard implements CanActivate {
-  constructor(private service: ServiceService, private router: Router) {}
+  constructor(private router: Router, private auth: AuthService) {}
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): boolean {
-    if (this.service.loggedIn) {
+    if (this.auth.loggedIn) {
       return true;
     } else {
       this.router.navigate(['login']);

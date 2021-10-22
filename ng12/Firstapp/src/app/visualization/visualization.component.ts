@@ -8,19 +8,22 @@ import { ChartDataset, ChartOptions } from 'chart.js';
   styleUrls: ['./visualization.component.css'],
 })
 export class VisualizationComponent implements OnInit {
-  public data: ChartDataset[] = [{ data: [1.25, 97.32, 1.43] }];
+  active = 1.25;
+  cured = 97.32;
+  deaths = 1.43;
+  janInit = 10;
+  febInit = 30;
+  marInit = 20;
+  public data: ChartDataset[] = [
+    { data: [this.active, this.cured, this.deaths] },
+  ];
   public labels: string[] = ['Active', 'Cured', 'Deaths'];
 
-  /*
- public raindata: ChartDataset[]=[
-  {data:[10,30,50,100,220,900,1500,1300,500,420,150,10], label:'Rainfall'}
-  
-];
-*/
+  public rainData: ChartDataset[] = [
+    { data: [this.janInit, this.febInit, this.marInit], label: 'Rainfall' }
+  ];
 
-  public raindata: ChartDataset[] = [{ data: [10, 30, 20], label: 'Rainfall' }];
-
-  public rainlabels: string[] = ['Jan', 'Feb', 'Mar'];
+  public rainLabels: string[] = ['Jan', 'Feb', 'Mar'];
 
   jan = [];
   feb = [];
@@ -32,6 +35,6 @@ export class VisualizationComponent implements OnInit {
   }
 
   changeValue(Jan: any, Feb: any, Mar: any) {
-    this.raindata = [{ data: [Jan, Feb, Mar], label: 'Rainfall' }];
+    this.rainData = [{ data: [Jan, Feb, Mar], label: 'Rainfall' }];
   }
 }

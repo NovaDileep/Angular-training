@@ -1,4 +1,4 @@
-#user {
+/* #user {
   background-color: rgb(196, 211, 63);
   margin-left: 80px;
   margin-top: 50px;
@@ -11,4 +11,20 @@ th,
 td {
   padding: 10px;
   border: 2px solid black;
+} */
+
+.details {
+  margin-left: 35%;
+  margin-right: 30%;
+  margin-top: 50px;
+  background-color: rgb(209, 199, 180);
+  padding: 30px;
+  padding-top: 20px;
+  border-radius: 10px;
+  border: 2px solid black;
+}
+
+h3 {
+  text-align: center;
+  margin-bottom: 20px;
 }
